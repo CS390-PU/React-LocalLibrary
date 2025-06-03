@@ -1,0 +1,12 @@
+{
+  "name": "React LocalLibrary Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "sudo mkdir -p /data/db && sudo service mongodb start",
+  "forwardPorts": [3000, 27017],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "remoteUser": "node"
+}
