@@ -1,12 +1,9 @@
 {
-  "name": "React LocalLibrary Dev Container",
+  "name": "Full-Stack React + MongoDB",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "sudo mkdir -p /data/db && sudo service mongodb start",
-  "forwardPorts": [3000, 27017],
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
-  },
-  "remoteUser": "node"
+  "forwardPorts": [3000, 5173, 27017],
+  "postCreateCommand": "sudo systemctl enable --now mongod && npm install",
+  "remoteUser": "vscode"
 }
