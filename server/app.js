@@ -1,9 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
-
-require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -14,10 +13,7 @@ app.get("/api/hello", (req, res) => {
 });
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/local_library", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/local_library");
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
