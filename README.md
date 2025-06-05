@@ -71,3 +71,5 @@ found 0 vulnerabilities
 4. Create app.js inside of server with the existing code.
 
 5. Create .env and copy in existing code.
+
+6. The .devcontainer creates an app container and a mongo container.

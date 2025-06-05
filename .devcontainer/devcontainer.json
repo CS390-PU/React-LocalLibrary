@@ -4,6 +4,22 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "forwardPorts": [3000, 27017],
+  "portsAttributes": {
+  "3000": {
+    "label": "Express API",
+    "onAutoForward": "openBrowser",
+    "visibility": "public"
+  },
+  "5173": {
+    "label": "Vite Frontend",
+    "onAutoForward": "openBrowser",
+    "visibility": "public"
+  },
+  "27017": {
+    "label": "MongoDB",
+    "visibility": "private"
+  }
+},
   "customizations": {
     "vscode": {
       "extensions": [
@@ -12,5 +28,5 @@
       ]
     }
   },
-  "postCreateCommand": "npm install --prefix server"
+"postCreateCommand": "./start.sh"
 }
