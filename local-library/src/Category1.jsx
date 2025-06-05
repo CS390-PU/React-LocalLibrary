@@ -14,7 +14,9 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-axios.get('https://vigilant-computing-machine-v7r4p7v54w7cj9x-3000.app.github.dev/')
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/`)
+
+// axios.get('https://vigilant-computing-machine-v7r4p7v54w7cj9x-3000.app.github.dev/')
 
       .then((response) => setData(response.data))
       .catch((err) => console.error(err));
