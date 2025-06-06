@@ -7,27 +7,27 @@ Need to install the following packages:
 create-vite@6.5.0
 Ok to proceed? (y) y
 
-
 > npx
 > create-vite
 
 │
-◇  Project name:
-│  my-app
+◇ Project name:
+│ my-app
 │
-◇  Select a framework:
-│  React
+◇ Select a framework:
+│ React
 │
-◇  Select a variant:
-│  JavaScript
+◇ Select a variant:
+│ JavaScript
 │
-◇  Scaffolding project in /workspaces/ReactI/my-app...
+◇ Scaffolding project in /workspaces/ReactI/my-app...
 │
-└  Done. Now run:
+└ Done. Now run:
 
-  cd my-app
-  npm install
-  npm run dev
+cd my-app
+npm install
+npm run dev
+
   </pre>
 
 2. install react-boostrap
@@ -43,33 +43,38 @@ npm install react-bootstrap bootstrap
 Wrote to /workspaces/React-LocalLibrary/server/package.json:
 
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+"name": "server",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1"
+},
+"keywords": [],
+"author": "",
+"license": "ISC",
+"type": "commonjs"
 }
-
-
 
 @ryan2135 ➜ /workspaces/React-LocalLibrary/server (main) $ npm install express mongoose cors dotenv
 
 added 86 packages, and audited 87 packages in 7s
 
 16 packages are looking for funding
-  run `npm fund` for details
+run `npm fund` for details
 
 found 0 vulnerabilities
+
 </pre>
 
 4. Create app.js inside of server with the existing code.
 
-5. Create .env and copy in existing code.
+5. The .devcontainer creates an app container and a mongo container.
 
-6. The .devcontainer creates an app container and a mongo container.
+6. ./start.sh is automagically executed at start up
+
+7. Extra commands
+<pre>
+npm run lint      # Lint your React code
+npm run format    # Format your React code
+</pre>

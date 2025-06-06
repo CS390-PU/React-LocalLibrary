@@ -1,0 +1,28 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // Optional: format on paste too
+  "editor.formatOnPaste": true,
+
+  // Enable eslint auto-fixing on save (if eslint is installed)
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+
+  // Useful for React / JSX / modern JS
+  "javascript.format.enable": false,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Make files end with newline (common code style)
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Optional: consistent tab settings
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
+}

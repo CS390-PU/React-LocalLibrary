@@ -17,7 +17,7 @@
   },
   "27017": {
     "label": "MongoDB",
-    "visibility": "private"
+    "visibility": "public"
   }
 },
   "customizations": {

@@ -41,9 +41,10 @@ const mongoDB = process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library'
 mongoose.connect(mongoDB)
   .then(() => {
     console.log('Connected to MongoDB');
-    app.listen(3000, () => {
-      console.log('Server running on port 3000');
-    });
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Server running on port 3000');
+});
+
   })
   .catch((err) => {
     console.error('Failed to connect to MongoDB:', err);
