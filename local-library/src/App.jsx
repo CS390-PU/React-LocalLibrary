@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  PanelGroup,
-  Panel,
-  PanelResizeHandle,
-} from 'react-resizable-panels';
+import { PanelGroup, Panel, PanelResizeHandle } from 'react-resizable-panels';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Category1 from './Category1.jsx';
@@ -18,9 +14,15 @@ function App() {
           <Panel defaultSize={20} minSize={15} maxSize={40}>
             <div className="sidebar">
               <ul>
-                <li><Link to="/category1">Category I</Link></li>
-                <li><Link to="/category2">Category II</Link></li>
-                <li><Link to="/category3">Category III</Link></li>
+                <li>
+                  <Link to="/category1">Category I</Link>
+                </li>
+                <li>
+                  <Link to="/category2">Category II</Link>
+                </li>
+                <li>
+                  <Link to="/category3">Category III</Link>
+                </li>
               </ul>
             </div>
           </Panel>

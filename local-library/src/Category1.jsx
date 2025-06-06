@@ -14,9 +14,12 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_BASE_URL}/`)
+    axios
+      .get('/api/')
 
-// axios.get('https://vigilant-computing-machine-v7r4p7v54w7cj9x-3000.app.github.dev/')
+      // axios.get(`${import.meta.env.VITE_API_BASE_URL}/`)
+
+      // axios.get('https://vigilant-computing-machine-v7r4p7v54w7cj9x-3000.app.github.dev/')
 
       .then((response) => setData(response.data))
       .catch((err) => console.error(err));
@@ -28,7 +31,8 @@ function Home() {
     <div>
       <h1>Local Library Home</h1>
       <p>
-        Welcome to LocalLibrary, a very basic Express website developed as a tutorial example on the Mozilla Developer Network.
+        Welcome to LocalLibrary, a very basic Express website developed as a
+        tutorial example on the Mozilla Developer Network.
       </p>
       <h2>Dynamic content</h2>
       <p>The library has the following record counts:</p>
