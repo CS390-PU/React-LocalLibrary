@@ -7,8 +7,8 @@
 
   // Enable eslint auto-fixing on save (if eslint is installed)
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
 
   // Useful for React / JSX / modern JS

@@ -5,6 +5,7 @@ import './App.css';
 import Category1 from './Category1.jsx';
 import Category2 from './Category2.jsx';
 import Category3 from './Category3.jsx';
+import Home from './Home.jsx'; // Add Home component import
 
 function App() {
   return (
@@ -15,13 +16,19 @@ function App() {
             <div className="sidebar">
               <ul>
                 <li>
-                  <Link to="/category1">Category I</Link>
+                  <Link to="/">Home</Link> {/* Link to Home page */}
                 </li>
                 <li>
-                  <Link to="/category2">Category II</Link>
+                  <Link to="/category1">All Books</Link>
                 </li>
                 <li>
-                  <Link to="/category3">Category III</Link>
+                  <Link to="/category2">All Authors</Link>
+                </li>
+                <li>
+                  <Link to="/category3">All Genres</Link>
+                </li>
+                <li>
+                  <Link to="/category3">All Book Instances</Link>
                 </li>
               </ul>
             </div>
@@ -30,6 +37,8 @@ function App() {
           <Panel>
             <div className="content">
               <Routes>
+                <Route path="/" element={<Home />} />{' '}
+                {/* Route to display Home page */}
                 <Route path="/category1" element={<Category1 />} />
                 <Route path="/category2" element={<Category2 />} />
                 <Route path="/category3" element={<Category3 />} />
