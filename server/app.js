@@ -21,6 +21,39 @@
 
 // const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// worked ...............
+// console.log('Starting server...');
+
+// const express = require('express');
+// const mongoose = require('mongoose');
+// const cors = require('cors');
+// const indexRouter = require('./routes/index');
+
+// const app = express();
+
+// console.log('Starting server...');
+
+// app.use(cors());
+// app.use(express.json());
+// app.use('/', indexRouter);
+
+// const mongoDB = process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library';
+
+// mongoose.connect(mongoDB)
+//   .then(() => {
+//     console.log('Connected to MongoDB');
+// app.listen(3000, '0.0.0.0', () => {
+//   console.log('Server running on port 3000');
+// });
+
+//   })
+//   .catch((err) => {
+//     console.error('Failed to connect to MongoDB:', err);
+//   });
+
+// changing ..................
+
 console.log('Starting server...');
 
 const express = require('express');
@@ -30,23 +63,26 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-console.log('Starting server...');
-
+// Middleware setup
 app.use(cors());
 app.use(express.json());
-app.use('/', indexRouter);
+app.use('/', indexRouter); // Home route
 
-const mongoDB = process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library';
+// MongoDB connection string
+const mongoDB =
+  process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library';
 
-mongoose.connect(mongoDB)
+// Connect to MongoDB
+mongoose
+  .connect(mongoDB)
   .then(() => {
     console.log('Connected to MongoDB');
-app.listen(3000, '0.0.0.0', () => {
-  console.log('Server running on port 3000');
-});
 
+    // Start the server only after the MongoDB connection is successful
+    app.listen(3000, '0.0.0.0', () => {
+      console.log('Server running on port 3000');
+    });
   })
   .catch((err) => {
     console.error('Failed to connect to MongoDB:', err);
   });
-
