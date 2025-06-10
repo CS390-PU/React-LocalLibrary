@@ -78,3 +78,24 @@ found 0 vulnerabilities
 npm run lint      # Lint your React code
 npm run format    # Format your React code
 </pre>
+
+8. After adding models and other routes ...
+
+9. Populate the database by changing into server and running:
+<pre>
+node populatedb.js "mongodb://mongo:27017/local_library"
+</pre>
+
+10. Install mongosh globally then examine any dbs
+<pre>
+npm install -g mongosh
+mongosh mongodb://mongo:27017
+show dbs
+use local_library
+show collections
+</pre>
+
+11. Install MongoDB extansion and connect to playground. At the time of connection, enter: mongodb://mongo:27017/local_library
+
+*BIG NOTE
+The ports need to be public and not private. Click on ports and make sure the visibility is Public not Private. If Private, just click on the word Private and toggle to Public.
