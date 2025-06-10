@@ -56,29 +56,30 @@
 
 console.log('Starting server...');
 
+// app.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');  // Make sure this import is correct
 
 const app = express();
 
-// Middleware setup
-app.use(cors());
+// CORS setup (as you already have)
+const corsOptions = {
+  origin: 'https://shiny-disco-pqwv7qr64jqc97v-5173.app.github.dev', // Update with your frontend URL if necessary
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions)); // Apply CORS middleware
 app.use(express.json());
-app.use('/', indexRouter); // Home route
+app.use('/', indexRouter);  // Use the routes defined in index.js
 
-// MongoDB connection string
-const mongoDB =
-  process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library';
+const mongoDB = process.env.MONGODB_URI || 'mongodb://mongo:27017/local_library';
 
-// Connect to MongoDB
-mongoose
-  .connect(mongoDB)
+mongoose.connect(mongoDB)
   .then(() => {
     console.log('Connected to MongoDB');
-
-    // Start the server only after the MongoDB connection is successful
     app.listen(3000, '0.0.0.0', () => {
       console.log('Server running on port 3000');
     });

@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState, useEffect } from 'react';
 import { FaBook, FaUserAlt, FaTags, FaCopy } from 'react-icons/fa'; // Importing icons
 import './Home.css';
@@ -14,13 +13,20 @@ const Home = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
-      const response = await fetch('https://my-codespace-3000.app.github.dev/');
-      const data = await response.json();
-      setStats(data);
+      try {
+        // Fetch stats from the backend
+        const response = await fetch(
+          'https://shiny-disco-pqwv7qr64jqc97v-3000.app.github.dev/counts'
+        );
+        const data = await response.json();
+        setStats(data); // Update state with fetched data
+      } catch (error) {
+        console.error('Error fetching stats:', error);
+      }
     };
 
-    fetchStats();
-  }, []);
+    fetchStats(); // Call the function on component mount
+  }, []); // Empty dependency array ensures this runs only once, on mount
 
   return (
     <div className="home-container">
