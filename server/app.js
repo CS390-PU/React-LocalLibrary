@@ -66,7 +66,10 @@ const app = express();
 
 // CORS setup (as you already have)
 const corsOptions = {
-  origin: 'https://shiny-disco-pqwv7qr64jqc97v-5173.app.github.dev', // Update with your frontend URL if necessary
+  origin: [
+    'https://urban-space-spork-qg4rvgqxjj63995j-5173.app.github.dev',
+    'http://localhost:5173',
+  ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 };

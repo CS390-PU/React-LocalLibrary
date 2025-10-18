@@ -11,22 +11,21 @@ const Home = () => {
     genreCount: 0,
   });
 
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        // Fetch stats from the backend
-        const response = await fetch(
-          'https://shiny-disco-pqwv7qr64jqc97v-3000.app.github.dev/counts'
-        );
-        const data = await response.json();
-        setStats(data); // Update state with fetched data
-      } catch (error) {
-        console.error('Error fetching stats:', error);
-      }
-    };
+useEffect(() => {
+  const fetchStats = async () => {
+    try {
+      const response = await fetch(
+        'https://urban-space-spork-qg4rvgqxjj63995j-3000.app.github.dev/counts'
+      );
+      const data = await response.json();
+      setStats(data);
+    } catch (error) {
+      console.error('Error fetching stats:', error);
+    }
+  };
 
-    fetchStats(); // Call the function on component mount
-  }, []); // Empty dependency array ensures this runs only once, on mount
+  fetchStats();
+}, []);
 
   return (
     <div className="home-container">
