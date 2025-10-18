@@ -64,17 +64,28 @@ const indexRouter = require('./routes/index');  // Make sure this import is corr
 
 const app = express();
 
+// making CORS more flexible
 // CORS setup (as you already have)
-const corsOptions = {
-  origin: [
-    'https://urban-space-spork-qg4rvgqxjj63995j-5173.app.github.dev',
-    'http://localhost:5173',
-  ],
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-};
+// const corsOptions = {
+//   origin: [
+//     'https://urban-space-spork-qg4rvgqxjj63995j-5173.app.github.dev',
+//     'http://localhost:5173',
+//   ],
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type'],
+// };
+// app.use(cors(corsOptions)); // Apply CORS middleware
 
-app.use(cors(corsOptions)); // Apply CORS middleware
+// Allow any Codespaces frontend (*.app.github.dev) and localhost:5173
+app.use(
+  cors({
+    origin: [/app\.github\.dev$/, 'http://localhost:5173'],
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  })
+);
+
+
 app.use(express.json());
 app.use('/', indexRouter);  // Use the routes defined in index.js
 
